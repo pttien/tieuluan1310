@@ -6,59 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.tieuluan.struts2.bean.UserBean;
 import com.tieuluan.struts2.bussines.UserService;
-import com.tieuluan.struts2.utils.CommonUtility;
+import com.tieuluan.struts2.model.User;
+
 
 /**
  * @author Dinesh Rajput
  *
  */
-public class UserAction extends ActionSupport implements ModelDriven<UserBean>{
+public class UserAction extends AbstractAction {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Autowired
-	private UserBean userBean;
-	@Autowired
 	private UserService userService;
-	private List<UserBean> users;
-
+    private List<User> listuser;
 	public String execute()	{
-		users = CommonUtility.createUserBeanList(userService.getUserList());
+//		users = CommonUtility.createUserBeanList(userService.getUserList());
+		listuser =userService.getUserList();
 		return "user";
 	}
-	
-	public String addUser(){
-		userService.saveUser(CommonUtility.createModel(userBean));
-		users = CommonUtility.createUserBeanList(userService.getUserList());
-		return "addUser";
+	public List<User> getListuser() {
+		return listuser;
 	}
-	public String listUser(){
-		users = CommonUtility.createUserBeanList(userService.getUserList());
-		return "users";
-	}
-	
-	@Override
-	public UserBean getModel() {
-		return userBean;
-	}
-	public String alia() { 
-		return "alia";
-	}
-	public String madhuri() { 
-		return "madhuri"; 
-	}
-	public String user() { 
-		return "user"; 
-	}
-
-	public List<UserBean> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<UserBean> users) {
-		this.users = users;
+	public void setListuser(List<User> listuser) {
+		this.listuser = listuser;
 	}
 	
 }
