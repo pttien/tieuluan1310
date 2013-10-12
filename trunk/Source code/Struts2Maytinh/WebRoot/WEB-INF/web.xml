@@ -7,7 +7,7 @@
   <context-param>
     <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
     <param-value>
-	      /WEB-INF/tiles-def.xml
+	      /WEB-INF/tiles.xml
 	   </param-value>
   </context-param>
   <listener>

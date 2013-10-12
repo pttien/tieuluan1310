@@ -6,27 +6,27 @@
 
 <tiles-definitions>
 
-   <definition name="mainTemplate" template="/mainTemplate.jsp">
+   <definition name="mainTemplate" template="/Layout/mainTemplate.jsp">
       <put-attribute name="title"  value="User Registration Form"/>
-      <put-attribute name="header" value="/header.jsp"/>
-      <put-attribute name="menu"   value="/menu.jsp"/>
-      <put-attribute name="body"   value="/body.jsp"/>
-      <put-attribute name="footer"   value="/footer.jsp"/>
+      <put-attribute name="header" value="/Layout/header.jsp"/>
+      <put-attribute name="menu"   value="/Layout/menu.jsp"/>
+      <put-attribute name="body"   value="/Layout/body.jsp"/>
+      <put-attribute name="footer"   value="/Layout/footer.jsp"/>
    </definition>
 
    <definition name="alia" extends="mainTemplate">
       <put-attribute name="title"  value="Alia Bhatt"/>
-      <put-attribute name="body"   value="/alia.jsp"/>      
+      <put-attribute name="body"   value="/Layout/alia.jsp"/>      
    </definition>
 
    <definition name="madhuri" extends="mainTemplate">
       <put-attribute name="title"  value="Madhuri Dixit"/>
-      <put-attribute name="body"   value="/madhuri.jsp"/>      
+      <put-attribute name="body"   value="/Layout/madhuri.jsp"/>      
    </definition>
    
    <definition name="success" extends="mainTemplate">
       <put-attribute name="title"  value="User Added Successfully"/>
-      <put-attribute name="body"   value="/success.jsp"/>      
+      <put-attribute name="body"   value="/Layout/success.jsp"/>      
    </definition>
   
 </tiles-definitions>
