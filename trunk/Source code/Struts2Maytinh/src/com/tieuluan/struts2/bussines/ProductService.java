@@ -15,4 +15,5 @@ public interface ProductService {
 //	
 	List<Product> getProductList();
 	List<Product> getProductListByrowNum();
+	Product getProductById(Integer id);
 }

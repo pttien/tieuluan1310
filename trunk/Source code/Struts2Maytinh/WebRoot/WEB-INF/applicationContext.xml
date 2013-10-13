@@ -52,5 +52,7 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 	
 	
 	<bean id="home" class="com.tieuluan.struts2.action.Home"/>
+	<bean id="productAction" class="com.tieuluan.struts2.action.ProductAction"/>
+	
 <!--     <bean id="userBean" class="com.tieuluan.struts2.bean.UserBean"/> -->
 </beans>

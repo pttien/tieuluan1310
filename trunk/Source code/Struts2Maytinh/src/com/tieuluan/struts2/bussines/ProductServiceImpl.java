@@ -36,6 +36,9 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getProductListByrowNum() {
 		return productDao.getProductListByrowNum();
 	}
+	public Product getProductById(Integer id){
+		return productDao.getProductById(id);
+	}
 	
 
 }

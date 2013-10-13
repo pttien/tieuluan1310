@@ -15,5 +15,8 @@
         <action name="home" class="home" method="execute">
             <result name="success" type="tiles">success</result>
         </action>
+         <action name="detailProduct" class="productAction" method="detailProduct">
+            <result name="success" type="tiles">detailproduct</result>
+        </action>
     </package>
  </struts>
