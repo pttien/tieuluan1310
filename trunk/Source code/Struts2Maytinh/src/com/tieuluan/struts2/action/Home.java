@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.tieuluan.struts2.bussines.UserService;
-import com.tieuluan.struts2.model.User;
+import com.tieuluan.struts2.bussines.ProductService;
+import com.tieuluan.struts2.model.Product;
+
 
 
 /**
@@ -18,19 +19,20 @@ public class Home extends AbstractAction {
 
 	private static final long serialVersionUID = 1L;
 	
-//	@Autowired
-//	private UserService userService;
-//    private List<User> listuser;
+	@Autowired
+	private ProductService productService;
+    private List<Product> lisproduct;
 	public String execute()	{
 //		users = CommonUtility.createUserBeanList(userService.getUserList());
 //		listuser =userService.getUserList();
+		lisproduct=productService.getProductList();
 		return "success";
 	}
-//	public List<User> getListuser() {
-//		return listuser;
-//	}
-//	public void setListuser(List<User> listuser) {
-//		this.listuser = listuser;
-//	}
-//	
+	public List<Product> getLisproduct() {
+		return lisproduct;
+	}
+	public void setLisproduct(List<Product> lisproduct) {
+		this.lisproduct = lisproduct;
+	}
+
 }

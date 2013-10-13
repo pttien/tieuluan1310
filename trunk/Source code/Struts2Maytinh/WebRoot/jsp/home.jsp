@@ -2,36 +2,28 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
   <div class="container_12">
                         <div class="wrapper p5">
+                        
+                         <s:iterator value="lisproduct" var="ls">
+					  
+  <!-- ------------------------------- -->
+  							
                             <article class="grid_4">
                                 <div class="wrapper">
-                                    <figure class="img-indent"><img src="/resource/images/page1-img1.png" alt=""></figure>
+                                    <figure class="img-indent">
+                                    <div id="newimage">
+                                    <img src="/resource/images/<s:property value='#ls.image'/>" alt="">
+                                    </div>
+                                    </figure>
                                     <div class="extra-wrap">
-                                        <h4>Engine Repair</h4>
-                                        <p class="p2">Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.</p>
-                                        <a class="button" href="#">Read More</a>
+                                        <h4><s:property value='#ls.name'/></h4>
+                                        <p class="p2"><s:property value='#ls.info'/></p>
+                                        <a class="button" href="#">Chi tiết</a>
                                     </div>
                                 </div>
                             </article>
-                            <article class="grid_4">
-                                <div class="wrapper">
-                                    <figure class="img-indent"><img src="/resource/images/page1-img2.png" alt=""></figure>
-                                    <div class="extra-wrap">
-                                        <h4>Wheel Alignment</h4>
-                                        <p class="p2">Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                        <a class="button" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="grid_4">
-                                <div class="wrapper">
-                                    <figure class="img-indent"><img src="/resource/images/page1-img3.png" alt=""></figure>
-                                    <div class="extra-wrap">
-                                        <h4>Fluid Exchanges</h4>
-                                        <p class="p2">No sea takimata sanctus est gorem ipsum dolor sit amet forem ipsum.</p>
-                                        <a class="button" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </article>
+  <!-- --------------------------- -->
+ 						 </s:iterator>
+                          
                         </div>
                         <div class="container-bot">
                             <div class="container-top">

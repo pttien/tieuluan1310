@@ -26,7 +26,14 @@ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 		 <property name="dataSource" ref="dataSource"></property>
 		 <property name="annotatedClasses">
 	  		<list>
-	   			<value>com.tieuluan.struts2.model.User</value>
+	   			<value>com.tieuluan.struts2.model.Category</value>
+	   			<value>com.tieuluan.struts2.model.Comment</value>
+	   			<value>com.tieuluan.struts2.model.Detail_oder</value>
+	   			<value>com.tieuluan.struts2.model.Factory</value>
+	   			<value>com.tieuluan.struts2.model.Favorite_product</value>
+	   			<value>com.tieuluan.struts2.model.Member</value>
+	   			<value>com.tieuluan.struts2.model.Oder</value>
+	   			<value>com.tieuluan.struts2.model.Product</value>
 	 		 </list>
 	 	</property>
 	 	<property name="hibernateProperties">
