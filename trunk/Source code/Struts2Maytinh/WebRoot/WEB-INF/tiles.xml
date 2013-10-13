@@ -6,27 +6,15 @@
 
 <tiles-definitions>
 
-   <definition name="mainTemplate" template="/Layout/mainTemplate.jsp">
-      <put-attribute name="title"  value="User Registration Form"/>
-      <put-attribute name="header" value="/Layout/header.jsp"/>
-      <put-attribute name="menu"   value="/Layout/menu.jsp"/>
-      <put-attribute name="body"   value="/Layout/body.jsp"/>
+   <definition name="fulllayout" template="/Layout/Layout.jsp">
+      <put-attribute name="title"  value="Website demo"/>
+      <put-attribute name="head" value="/Layout/head.jsp"/>
+      <put-attribute name="header"   value="/Layout/header.jsp"/>
+      <put-attribute name="body"   value=""/>
       <put-attribute name="footer"   value="/Layout/footer.jsp"/>
+   </definition>  
+   <definition name="success" extends="fulllayout">
+      <put-attribute name="title"  value="demo lay out"/>
+      <put-attribute name="body"   value="/jsp/home.jsp"/>      
    </definition>
-
-   <definition name="alia" extends="mainTemplate">
-      <put-attribute name="title"  value="Alia Bhatt"/>
-      <put-attribute name="body"   value="/Layout/alia.jsp"/>      
-   </definition>
-
-   <definition name="madhuri" extends="mainTemplate">
-      <put-attribute name="title"  value="Madhuri Dixit"/>
-      <put-attribute name="body"   value="/Layout/madhuri.jsp"/>      
-   </definition>
-   
-   <definition name="success" extends="mainTemplate">
-      <put-attribute name="title"  value="User Added Successfully"/>
-      <put-attribute name="body"   value="/Layout/success.jsp"/>      
-   </definition>
-  
 </tiles-definitions>

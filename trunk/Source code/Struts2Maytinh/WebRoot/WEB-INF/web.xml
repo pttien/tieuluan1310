@@ -2,7 +2,7 @@
 <web-app>
   <display-name>Struts2Maytinh</display-name>
   <welcome-file-list>
-    <welcome-file>users.jsp</welcome-file>
+<!--     <welcome-file>users.jsp</welcome-file> -->
   </welcome-file-list>
   <context-param>
     <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
