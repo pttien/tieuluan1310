@@ -409,3 +409,7 @@ footer {
 	text-align:center;
 }
 	footer span {display:block;}
+	#newimage img{
+	width: 100px !important;
+	height: 100px !important;
+	}
