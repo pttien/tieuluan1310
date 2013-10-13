@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 13, 2013 at 04:48 PM
+-- Generation Time: Oct 14, 2013 at 01:01 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.16
 
@@ -35,7 +35,15 @@ CREATE TABLE IF NOT EXISTS `category` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'dell', '2013-10-01 00:00:00', '2013-10-09 00:00:00'),
+(2, 'acer', '2013-10-02 00:00:00', '2013-10-10 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -53,7 +61,9 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_member_idx` (`id_member`),
-  KEY `id_product_idx` (`id_product`)
+  KEY `id_product_idx` (`id_product`),
+  KEY `FK38A5EE5FBE695710` (`id_product`),
+  KEY `FK38A5EE5F65D1E9C2` (`id_member`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -72,7 +82,9 @@ CREATE TABLE IF NOT EXISTS `detail_oder` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_oder_idx` (`id_oder`),
-  KEY `id_product_idx` (`id_product`)
+  KEY `id_product_idx` (`id_product`),
+  KEY `FK85CC2470BE695710` (`id_product`),
+  KEY `FK85CC2470515C9292` (`id_oder`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -91,7 +103,14 @@ CREATE TABLE IF NOT EXISTS `factory` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `factory`
+--
+
+INSERT INTO `factory` (`id`, `name`, `adress`, `phone`, `mail`, `created_at`, `updated_at`) VALUES
+(1, 'fpt', '46 duong tran minh tong', '0973434248', 'xuanhoai2002@yahoo.com', '2013-10-01 00:00:00', '2013-10-15 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -108,7 +127,9 @@ CREATE TABLE IF NOT EXISTS `favorite_product` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_member_idx` (`id_member`),
-  KEY `id_product_idx` (`id_product`)
+  KEY `id_product_idx` (`id_product`),
+  KEY `FK9C99E14CBE695710` (`id_product`),
+  KEY `FK9C99E14C65D1E9C2` (`id_member`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -145,7 +166,8 @@ CREATE TABLE IF NOT EXISTS `oder` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_member_idx` (`id_member`)
+  KEY `id_member_idx` (`id_member`),
+  KEY `FK33F94265D1E9C2` (`id_member`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -169,8 +191,20 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `category_id_idx` (`category_id`),
-  KEY `factory_id_idx` (`factory_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `factory_id_idx` (`factory_id`),
+  KEY `FKED8DCCEF61329F64` (`category_id`),
+  KEY `FKED8DCCEF644FB1D0` (`factory_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `pice`, `factory_id`, `image`, `info`, `warranty`, `category_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'laptop doi moi', 12345, 1, 'page1-img1.png', 'hang that', 2, 2, 1, '2013-10-01 00:00:00', '2013-10-22 00:00:00'),
+(2, 'laptop1', 1256, 1, 'page1-img2.png', 'hang khong phai hang gia', 2, 2, 1, '2013-10-08 00:00:00', '2013-10-30 00:00:00'),
+(3, 'laptop xin', 1234, 1, 'page2-img1.png', 'hang that', 2, 2, 1, '2013-10-01 00:00:00', '2013-10-02 00:00:00'),
+(4, 'laptop', 987, 1, 'page2-img4.png', 'cai gi cung duoc', 2, 2, 1, '2013-10-16 00:00:00', '2013-10-31 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -352,33 +386,42 @@ CREATE TABLE IF NOT EXISTS `sf_guard_user_permission` (
 -- Constraints for table `comment`
 --
 ALTER TABLE `comment`
+  ADD CONSTRAINT `FK38A5EE5F65D1E9C2` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`),
   ADD CONSTRAINT `comment_id_member_member_id` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `comment_id_product_product_id` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `comment_id_product_product_id` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK38A5EE5FBE695710` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `detail_oder`
 --
 ALTER TABLE `detail_oder`
+  ADD CONSTRAINT `FK85CC2470515C9292` FOREIGN KEY (`id_oder`) REFERENCES `oder` (`id`),
   ADD CONSTRAINT `detail_oder_id_oder_oder_id` FOREIGN KEY (`id_oder`) REFERENCES `oder` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `detail_oder_id_product_product_id` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `detail_oder_id_product_product_id` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK85CC2470BE695710` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `favorite_product`
 --
 ALTER TABLE `favorite_product`
+  ADD CONSTRAINT `FK9C99E14C65D1E9C2` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`),
   ADD CONSTRAINT `favorite_product_id_member_member_id` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `favorite_product_id_product_product_id` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `favorite_product_id_product_product_id` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK9C99E14CBE695710` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `oder`
 --
 ALTER TABLE `oder`
+  ADD CONSTRAINT `FK33F94265D1E9C2` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`),
   ADD CONSTRAINT `oder_id_member_member_id` FOREIGN KEY (`id_member`) REFERENCES `member` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
+  ADD CONSTRAINT `FKED8DCCEF644FB1D0` FOREIGN KEY (`factory_id`) REFERENCES `factory` (`id`),
+  ADD CONSTRAINT `FKED8DCCEF61329F64` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
   ADD CONSTRAINT `product_category_id_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `product_factory_id_factory_id` FOREIGN KEY (`factory_id`) REFERENCES `factory` (`id`) ON DELETE CASCADE;
 
