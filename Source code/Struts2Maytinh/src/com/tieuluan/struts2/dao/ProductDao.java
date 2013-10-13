@@ -16,4 +16,6 @@ public interface ProductDao {
 //	List<___User> getUserList(); 
 	List<Product> getProductList();
 	List<Product> getProductListByrowNum();
+	Product getProductById(Integer id);
+	
 }

@@ -15,7 +15,7 @@ import com.tieuluan.struts2.model.Product;
  * @author Dinesh Rajput
  *
  */
-public class Home extends AbstractAction {
+public class ProductAction extends AbstractAction {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -24,9 +24,10 @@ public class Home extends AbstractAction {
     private List<Product> lisproduct;
     private Product product;
 	public String execute()	{
-//		users = CommonUtility.createUserBeanList(userService.getUserList());
-//		listuser =userService.getUserList();
-		lisproduct=productService.getProductList();
+		return "success";
+	}
+	public String detailProduct()
+	{
 		return "success";
 	}
 	public List<Product> getLisproduct() {
@@ -35,9 +36,5 @@ public class Home extends AbstractAction {
 	public void setLisproduct(List<Product> lisproduct) {
 		this.lisproduct = lisproduct;
 	}
-	public Product getProductById(Integer id)
-	{
-		return product;
-	}
-
+	
 }

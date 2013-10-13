@@ -24,12 +24,12 @@
                     </div>
                     <nav>
                         <ul class="menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="maintenance.html">Maintenance </a></li>
-                            <li><a href="repair.html">Repair</a></li>
-                            <li><a class="active" href="price.html">Price List</a></li>
-                            <li><a href="locations.html">Locations</a></li>
+                           <li><a class="active" href="index.html">Trang chủ</a></li>
+                            <li><a href="about.html">Giới thiệu</a></li>
+                            <li><a href="maintenance.html">Sản phẩm </a></li>
+                            <li><a href="repair.html">Sản phẩm yêu thích</a></li>
+                            <li><a href="price.html">Gởi phản hồi</a></li>
+                            <li><a href="locations.html">Đăng ký</a></li>
                         </ul>
                     </nav>
                 </div>

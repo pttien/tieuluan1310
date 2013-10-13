@@ -12,7 +12,7 @@
       <put-attribute name="body"   value=""/>
       <put-attribute name="footer"   value="/Layout/footer.jsp"/>
    </definition>  
-     <definition name="twolayout" template="/Layout/Layout.jsp">
+     <definition name="twolayout" template="/Layout/LayoutTwo.jsp">
       <put-attribute name="title"  value="Website demo"/>
       <put-attribute name="head" value="/Layout/head.jsp"/>
       <put-attribute name="body"   value=""/>
