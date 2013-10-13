@@ -5,7 +5,6 @@
    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-
    <definition name="fulllayout" template="/Layout/Layout.jsp">
       <put-attribute name="title"  value="Website demo"/>
       <put-attribute name="head" value="/Layout/head.jsp"/>
