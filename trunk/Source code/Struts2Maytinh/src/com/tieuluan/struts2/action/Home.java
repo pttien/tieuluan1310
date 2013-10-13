@@ -18,19 +18,19 @@ public class Home extends AbstractAction {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Autowired
-	private UserService userService;
-    private List<User> listuser;
+//	@Autowired
+//	private UserService userService;
+//    private List<User> listuser;
 	public String execute()	{
 //		users = CommonUtility.createUserBeanList(userService.getUserList());
-		listuser =userService.getUserList();
+//		listuser =userService.getUserList();
 		return "success";
 	}
-	public List<User> getListuser() {
-		return listuser;
-	}
-	public void setListuser(List<User> listuser) {
-		this.listuser = listuser;
-	}
-	
+//	public List<User> getListuser() {
+//		return listuser;
+//	}
+//	public void setListuser(List<User> listuser) {
+//		this.listuser = listuser;
+//	}
+//	
 }
