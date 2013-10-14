@@ -435,3 +435,7 @@ footer {
 		-moz-border-radius:2px;
 		-webkit-border-radius:2px;
 	}
+	#twoimage img{
+	width: 100px !important;
+	height: 100px !important;
+	}

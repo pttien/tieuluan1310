@@ -47,10 +47,10 @@ public class ProductDaoImpl implements ProductDao {
 	public Product getProductById(Integer id){
         
         	Product product = null;
-        	product=(Product)sessionFactory.getCurrentSession().createCriteria(Product.class).add(Restrictions.eq("id", id));    
+        	product=(Product)sessionFactory.getCurrentSession().get(Product.class, id);  
         	return product;
      
-    }
+    } 
 
 
 }
