@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.tieuluan.struts2.bussines.ProductService;
 import com.tieuluan.struts2.model.Product;
+import com.tieuluan.struts2.utils.KPaging;
 
 
 
@@ -24,9 +25,10 @@ public class Home extends AbstractAction {
     private List<Product> lisproduct;
     private Product product;
 	public String execute()	{
-//		users = CommonUtility.createUserBeanList(userService.getUserList());
-//		listuser =userService.getUserList();
-		lisproduct=productService.getProductList();
+		KPaging<Product> paging =new KPaging<Product>();
+		paging.setPage(0);
+		paging.setMaxResult(3);
+		lisproduct=productService.getProductListPaging(paging);
 		return "success";
 	}
 	public List<Product> getLisproduct() {

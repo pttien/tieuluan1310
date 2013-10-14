@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tieuluan.struts2.dao.ProductDao;
 import com.tieuluan.struts2.model.Product;
+import com.tieuluan.struts2.utils.KPaging;
 
 
 /**
@@ -33,8 +34,8 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.getProductList();
 	}
 	@Override
-	public List<Product> getProductListByrowNum() {
-		return productDao.getProductListByrowNum();
+	public List<Product> getProductListPaging(KPaging<Product> paging) {
+		return productDao.getProductListPaging(paging);
 	}
 	public Product getProductById(Integer id){
 		return productDao.getProductById(id);
