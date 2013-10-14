@@ -14,6 +14,7 @@
     <script src="/resource/js/tms_presets.js" type="text/javascript"></script>
     <script src="/resource/js/jquery.easing.1.3.js" type="text/javascript"></script>
     <script src="/resource/js/jquery.equalheights.js" type="text/javascript"></script>
+    <script src="/resource/js/Product/product.js" type="text/javascript"></script>
 	<!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
