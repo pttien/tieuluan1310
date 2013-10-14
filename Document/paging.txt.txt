@@ -1,0 +1,20 @@
+private static final int limitResultsPerPage = 3;
+
+ 
+
+public List<Employee> getEmployeeList(int page) {
+
+        Query q = sessionFactory.getCurrentSession().createQuery(
+
+                "from Employee");
+
+        q.setFirstResult(page * limitResultsPerPage);
+
+        q.setMaxResults(limitResultsPerPage);
+
+        return (List<Employee>) q.list();
+
+}
+http://api.jquery.com/mouseover/
+
+http://www.krizna.com/centos/setup-mail-server-in-centos-6/
