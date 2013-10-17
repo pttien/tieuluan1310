@@ -21,7 +21,7 @@ import com.opensymphony.xwork2.Preparable;
 public class AbstractAction extends ActionSupport implements Preparable {
 	private static final long serialVersionUID = 5255044268632756041L;
 	public static final String JSON = "json";
-
+	protected Map<String, Object> result = new HashMap<String, Object>();
 
 	@Override
 	public void prepare() throws Exception {
@@ -29,6 +29,14 @@ public class AbstractAction extends ActionSupport implements Preparable {
 		
 	}
 
+	public Map<String, Object> getResult() {
+		return result;
+	}
+
+	public void setResult(Map<String, Object> result) {
+		this.result = result;
+	}
+	
 
 	
 }

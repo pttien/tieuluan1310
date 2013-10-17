@@ -1,6 +1,8 @@
 package com.tieuluan.struts2.action;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,7 +25,6 @@ public class Home extends AbstractAction {
 	@Autowired
 	private ProductService productService;
     private List<Product> lisproduct;
-    private Product product;
 	public String execute()	{
 		KPaging<Product> paging =new KPaging<Product>();
 		paging.setPage(0);
@@ -31,15 +32,13 @@ public class Home extends AbstractAction {
 		lisproduct=productService.getProductListPaging(paging);
 		return "success";
 	}
+	
 	public List<Product> getLisproduct() {
 		return lisproduct;
 	}
 	public void setLisproduct(List<Product> lisproduct) {
 		this.lisproduct = lisproduct;
 	}
-	public Product getProductById(Integer id)
-	{
-		return product;
-	}
-
+		
+	
 }

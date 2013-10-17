@@ -3,23 +3,20 @@ var Product = {
 	xhrCreateSerial : null,
 	
 	getProductById:function(id){
-		if(Product.xhrSearchCM!=null){
-			Product.xhrSearchCM.abort();
-			Product.xhrSearchCM=null;
-		}
-		var data = new Object();	
-		data.id = id;
-		var kData = $.param(data, true);
-		Product.xhrSearchCM=$.ajax({
-			type : "GET",
-			url : "/getProduce",
-			data : (kData),
-			dataType: "html",
-			success : function(data) {
-				$("#gridContent").html(data);
-			}
+		$.getJSON( "/getProduce", { id:id} )
+		.done(function( json ) {
+			var image='<img src="/resource/images/'+json.product.image+'" alt="">';
+			$( "#imagepr" ).html(""+image+"");
+//			var linkct='<a class="button" href="#">Chi tiết</a>';
+//			$( "#linkct" ).html(""+linkct+"");
+			$( "#namepro" ).html(""+json.product.name+"");
+			$( "#infopro" ).html(""+json.product.info+"");
+		////
+		})
+		.fail(function( jqxhr, textStatus, error ) {
+		var err = textStatus + ", " + error;
+		console.log( "Request Failed: " + err );
 		});
-		return false;
 	}
 		
 };

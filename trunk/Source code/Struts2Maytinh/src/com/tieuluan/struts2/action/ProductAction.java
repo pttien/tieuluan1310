@@ -26,10 +26,8 @@ public class ProductAction extends AbstractAction {
     private List<Product> lisproduct;
     private Product product;
     private Integer id;
-    private String images;
-    private String name;
-    private String info;
-    private Map<String, Object> result ;
+
+   
 	public String execute()	{
 		return "success";
 	}
@@ -39,26 +37,19 @@ public class ProductAction extends AbstractAction {
 	}
 	public String getJsonProductById()
 	{
+		result = new HashMap<String, Object>();
 		product=productService.getProductById(id);
 		
-		result.put(images,product.getImage());
-		result.put(name,product.getName());
-		result.put(info,product.getInfo());
+		result.put("product",product);
 		
-		return "json";
+		
+		return JSON;
 	}
-	
 	public List<Product> getLisproduct() {
 		return lisproduct;
 	}
 	public void setLisproduct(List<Product> lisproduct) {
 		this.lisproduct = lisproduct;
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 	public Product getProduct() {
 		return product;
@@ -66,33 +57,15 @@ public class ProductAction extends AbstractAction {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	public String getImages() {
-		return images;
+	public Integer getId() {
+		return id;
 	}
-	public void setImages(String images) {
-		this.images = images;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getInfo() {
-		return info;
-	}
-	public void setInfo(String info) {
-		this.info = info;
-	}
-	public Map<String, Object> getResult() {
-		return result;
-	}
-	public void setResult(Map<String, Object> result) {
-		this.result = result;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 	
+
 	
 	
 }

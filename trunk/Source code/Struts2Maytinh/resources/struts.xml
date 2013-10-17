@@ -7,7 +7,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" />
     <constant name="struts.custom.i18n.resources" value="myapp" />
-	<package name="home" extends="struts-default,json-default" namespace="/">
+	<package name="home" extends="json-default,struts-default" namespace="/">
         <result-types>
         	<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
        </result-types>

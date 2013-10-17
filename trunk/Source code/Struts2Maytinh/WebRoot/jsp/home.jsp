@@ -43,14 +43,15 @@
                                             <span>
 											<div class="wrapper margin-bot">
                                                     <figure class="img-indent3">
-                                                    <div id="twoimage">
-                                                    <img src="/resource/images/page4-img1.png" alt="">
+                                                    <div id="twoimage"><div id="imagepr"></div>
+                                                    
                                                     </div>
                                                     </figure>
                                                     <div class="extra-wrap">
-                                                        <h6><strong>At vero eos et accusam et justo duo dolores </strong></h6>
-                                                        <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                                                        <a class="button" href="#">Read More</a>
+                                                        <h6><strong><div id="namepro"></div> </strong></h6>
+                                                        <p><div id="infopro"></div></p>
+<!--                                                         <div id="linkct"></div> -->
+                                                        
                                                     </div>
                                                 </div>
                                              </span>
@@ -68,6 +69,7 @@
                             </div>
                         </div>
 <script type="text/javascript">
+$(document).ready( function() {
 			$( "div.gridcontent" )
 			.mouseenter(function() {
 			var id=$( this ).find("#id").val();
@@ -75,6 +77,11 @@
 				Product.getProductById(id);
 			})
 			.mouseleave(function() {
-			$( this ).find( "span" ).text( "" );
+				$( "#imagepr" ).html("");
+// 				$( "#linkct" ).html("");
+				$( "#namepro" ).html("");
+				$( "#infopro" ).html("");
+			
 			});
+});
 </script>
