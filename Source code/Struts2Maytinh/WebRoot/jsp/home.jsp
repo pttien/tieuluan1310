@@ -11,12 +11,12 @@
                                 <div class="wrapper">
                                     <figure class="img-indent">
                                     <div id="newimage">
-                                    <img src="/resource/images/<s:property value='#ls.image'/>" alt="">
+                                  	 <a id="idimage" href="/resource/images/<s:property value='#ls.image'/>"> <img src="/resource/images/<s:property value='#ls.image'/>" alt=""></a>
                                     </div>
                                     </figure>
                                     <div class="extra-wrap">
                                         <h4><s:property value='#ls.name'/></h4>
-                                        <p class="p2"><s:property value='#ls.info'/></p>
+                                        <p class="p2"><s:property value='#ls.info' escapeHtml="false"/></p>
                                         <a class="button" href="#">Chi tiết</a>
                                         <input type='hidden' id='id' value='<s:property value='#ls.id'/>' />
                                     </div>
@@ -70,10 +70,15 @@
                         </div>
 <script type="text/javascript">
 $(document).ready( function() {
+			
 			$( "div.gridcontent" )
 			.mouseenter(function() {
+				$( this ).find("#idimage").fancybox({
+					'overlayShow'	: false,
+					'transitionIn'	: 'elastic',
+					'transitionOut'	: 'elastic'
+				});
 			var id=$( this ).find("#id").val();
-// 			$( this ).find( "span" ).text(""+id);
 				Product.getProductById(id);
 			})
 			.mouseleave(function() {
