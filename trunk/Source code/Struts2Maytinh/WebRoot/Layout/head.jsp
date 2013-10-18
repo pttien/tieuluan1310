@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/resource/css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/resource/css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/resource/css/grid.css" type="text/css" media="screen">   
+    <link rel="stylesheet" type="text/css" href="/resource/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
     <script src="/resource/js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="/resource/js/cufon-yui.js" type="text/javascript"></script>
     <script src="/resource/js/cufon-replace.js" type="text/javascript"></script>
@@ -15,6 +16,8 @@
     <script src="/resource/js/jquery.easing.1.3.js" type="text/javascript"></script>
     <script src="/resource/js/jquery.equalheights.js" type="text/javascript"></script>
     <script src="/resource/js/Product/product.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/resource/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	
 	<!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
