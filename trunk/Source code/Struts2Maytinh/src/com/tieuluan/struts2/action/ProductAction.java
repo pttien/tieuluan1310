@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.tieuluan.struts2.bussines.ProductService;
 import com.tieuluan.struts2.model.Product;
+import com.tieuluan.struts2.utils.StringUtil;
 
 
 
@@ -39,7 +40,10 @@ public class ProductAction extends AbstractAction {
 	{
 		result = new HashMap<String, Object>();
 		product=productService.getProductById(id);
-		
+		String tmp=product.getInfo();
+		tmp=StringUtil.clearAllHTMLTags(tmp);
+		tmp=StringUtil.convertHTMLCodeToString(tmp);
+		product.setInfo(tmp);
 		result.put("product",product);
 		
 		

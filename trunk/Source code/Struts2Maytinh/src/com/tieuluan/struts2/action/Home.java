@@ -11,6 +11,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.tieuluan.struts2.bussines.ProductService;
 import com.tieuluan.struts2.model.Product;
 import com.tieuluan.struts2.utils.KPaging;
+import com.tieuluan.struts2.utils.StringUtil;
 
 
 
@@ -25,11 +26,25 @@ public class Home extends AbstractAction {
 	@Autowired
 	private ProductService productService;
     private List<Product> lisproduct;
+    private String content;
 	public String execute()	{
 		KPaging<Product> paging =new KPaging<Product>();
 		paging.setPage(0);
 		paging.setMaxResult(3);
 		lisproduct=productService.getProductListPaging(paging);
+		if(null!=lisproduct&&lisproduct.size()>0){
+			for(int i=0;i<lisproduct.size();i++){
+				if(StringUtil.isNullOrEmpty(lisproduct.get(i).getInfo())==false){
+					String tmp=lisproduct.get(i).getInfo();
+					tmp=StringUtil.clearAllHTMLTags(tmp);
+					tmp=StringUtil.convertHTMLCodeToString(tmp);
+					if(tmp.length()> 100){
+						tmp=tmp.substring(0,100)+"...";
+					}
+					lisproduct.get(i).setInfo(tmp);
+				}
+			}
+		}
 		return "success";
 	}
 	
@@ -38,6 +53,14 @@ public class Home extends AbstractAction {
 	}
 	public void setLisproduct(List<Product> lisproduct) {
 		this.lisproduct = lisproduct;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 		
 	
