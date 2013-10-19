@@ -443,3 +443,14 @@ footer {
 	position:relative;
 	z-index:1;
 }
+.buttonslogin {padding:20px 10px 0 0; text-align:center;}
+.InputFileStyle {  width: 70px !important;  }
+.inputFileImage{
+margin-left:290px;
+margin-top:-10px;
+margin-bottom :10px;
+}
+.inputFileImage img{
+width:70px;
+height:70px;
+}
