@@ -31,7 +31,9 @@ public class Oder implements Serializable {
 	@Column(name="date_oder")
 	private Date date_oder;
 	@Column(name="date_delivery")
-	private Date date_delivery;		
+	private Date date_delivery;	
+	@Column(name="status")
+	private Boolean status;		
 	@Column(name="created_at")
 	private Date created_at;
 	@Column(name="updated_at")
@@ -75,5 +77,10 @@ public class Oder implements Serializable {
 	public void setMember(Member member) {
 		this.member = member;
 	}
-	
+	public Boolean getStatus() {
+		return status;
+	}
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}		
 	}
