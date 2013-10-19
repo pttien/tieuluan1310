@@ -17,6 +17,7 @@ public interface ProductDao {
 //	List<___User> getUserList(); 
 	List<Product> getProductList();
 	List<Product> getProductListPaging(KPaging<Product> paging);
+	public List<Product> getProductList(KPaging<Product> paging,Integer id);
 	Product getProductById(Integer id);
 	
 }
