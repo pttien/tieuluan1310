@@ -17,8 +17,8 @@
                         <h1><a href="index.html">logo</a></h1>
                         <div class="fright">
                             <div class="indent">
-                                <span class="address">8901 Marmora Road, Glasgow, D04 89GR</span>
-                                <span class="phone">Tel: +1 959 552 5963</span>
+                                 <span class="address">LỚP SƯ PHẠM CNTT 109100</span>
+                                <span class="phone">Tel: 0121 7180 778</span>
                             </div>
                         </div>
                     </div>
