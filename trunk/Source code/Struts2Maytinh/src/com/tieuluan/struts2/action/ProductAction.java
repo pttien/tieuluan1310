@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.tieuluan.struts2.bussines.ProductService;
 import com.tieuluan.struts2.model.Product;
+import com.tieuluan.struts2.utils.KPaging;
 import com.tieuluan.struts2.utils.StringUtil;
 
 
@@ -30,7 +31,7 @@ public class ProductAction extends AbstractAction {
     private String name_factory;
     private String name_catalogy;
     private String pice_product;
-
+    
    
 	public String getName_catalogy() {
 		return name_catalogy;
@@ -43,6 +44,7 @@ public class ProductAction extends AbstractAction {
 	}
 	public String detailProduct()
 	{
+		//Lay gia trij doi truong product
 		product=productService.getProductById(id);
 		String tmp=product.getInfo();
 		tmp=StringUtil.clearAllHTMLTags(tmp);
@@ -51,6 +53,24 @@ public class ProductAction extends AbstractAction {
 		name_factory=product.getFactory().getName();
 		name_catalogy=product.getCategogy().getName();
 		pice_product=StringUtil.formatMoneyComma(product.getPice().toString());
+		//Lay danh sach 
+		KPaging<Product> paging =new KPaging<Product>();
+		paging.setPage(0);
+		paging.setMaxResult(3);
+		lisproduct=productService.getProductList(paging, product.getId());
+		if(null!=lisproduct&&lisproduct.size()>0){
+			for(int i=0;i<lisproduct.size();i++){
+				if(StringUtil.isNullOrEmpty(lisproduct.get(i).getInfo())==false){
+					String tmpp=lisproduct.get(i).getInfo();
+					tmpp=StringUtil.clearAllHTMLTags(tmpp);
+					tmpp=StringUtil.convertHTMLCodeToString(tmpp);
+					if(tmpp.length()> 100){
+						tmpp=tmpp.substring(0,100)+"...";
+					}
+					lisproduct.get(i).setInfo(tmpp);
+				}
+			}
+		}
 		return "success";
 		
 		
