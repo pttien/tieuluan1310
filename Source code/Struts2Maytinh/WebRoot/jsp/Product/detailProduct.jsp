@@ -2,36 +2,30 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
     <div class="container_12">
              <div class="wrapper p4">
-                 <article class="grid_4">
-                     <div class="wrapper">
-                         <figure class="img-indent"><img src="/resource/images/page1-img1.png" alt=""></figure>
-                         <div class="extra-wrap">
-                             <h4>Engine Repair</h4>
-                             <p class="p2">Lorem ipsum dolosit amet, consetetur sadipng elitr sed diam nonumy eirmod.</p>
-                             <a class="button" href="#">Chi tiết</a>
-                         </div>
-                     </div>
-                 </article>
-                 <article class="grid_4">
-                     <div class="wrapper">
-                         <figure class="img-indent"><img src="/resource/images/page1-img2.png" alt=""></figure>
-                         <div class="extra-wrap">
-                             <h4>Wheel Alignment</h4>
-                             <p class="p2">Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                             <a class="button" href="#">Chi tiết</a>
-                         </div>
-                     </div>
-                 </article>
-                 <article class="grid_4">
-                     <div class="wrapper">
-                         <figure class="img-indent"><img src="/resource/images/page1-img3.png" alt=""></figure>
-                         <div class="extra-wrap">
-                             <h4>Fluid Exchanges</h4>
-                             <p class="p2">No sea takimata sanctus est gorem ipsum dolor sit amet forem ipsum.</p>
-                             <a class="button" href="#">Chi tiết</a>
-                         </div>
-                     </div>
-                 </article>
+             
+            
+             <!-- --------------------------------------------------------------------------------------- -->
+              <s:iterator value="lisproduct" var="ls">
+              <div class="gridcontent">
+                  <article class="grid_4">
+                                <div class="wrapper">
+                                    <figure class="img-indent">
+                                    <div id="newimage">
+                                  	 <a id="idimage" href="/resource/images/<s:property value='#ls.image'/>"> <img src="/resource/images/<s:property value='#ls.image'/>" alt=""></a>
+                                    </div>
+                                    </figure>
+                                    <div class="extra-wrap">
+                                        <h4><s:property value='#ls.name'/></h4>
+                                        <p class="p2"><s:property value='#ls.info' escapeHtml="false"/></p>
+                                        <a class="button" href="/detailProduct?id=<s:property value='#ls.id'/>">Chi tiết</a>
+                                        <input type='hidden' id='id' value='<s:property value='#ls.id'/>' />
+                                    </div>
+                                </div>
+                            </article>    
+                            </div>   
+                 </s:iterator>      
+                 <!-- --------------------------------------------------------- -->
+                                 
              </div>
              <div class="container-bot">
                  <div class="container-top">
@@ -140,3 +134,19 @@
 
 
 </div>
+<script type="text/javascript">
+$(document).ready( function() {
+			$( "div.gridcontent" )
+			.mouseenter(function() {
+				$( this ).find("#idimage").fancybox({
+					'overlayShow'	: false,
+					'transitionIn'	: 'elastic',
+					'transitionOut'	: 'elastic'
+				});
+			
+			})
+			.mouseleave(function() {
+			
+			});
+});
+</script>
