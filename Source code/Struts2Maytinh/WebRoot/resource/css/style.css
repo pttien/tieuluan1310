@@ -439,3 +439,10 @@ footer {
 	width: 100px !important;
 	height: 100px !important;
 	}
+		.newwrapper {width:100%; overflow:hidden;padding-top: 25px}
+	#newcontent {
+	width:100%; 
+	padding:30px 0;
+	position:relative;
+	z-index:1;
+}
