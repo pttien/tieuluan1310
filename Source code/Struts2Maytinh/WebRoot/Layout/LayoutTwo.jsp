@@ -24,7 +24,7 @@
                     </div>
                     <nav>
                         <ul class="menu">
-                           <li><a class="active" href="index.html">Trang chủ</a></li>
+                           <li><a class="active" href="/home">Trang chủ</a></li>
                             <li><a href="about.html">Giới thiệu</a></li>
                             <li><a href="maintenance.html">Sản phẩm </a></li>
                             <li><a href="repair.html">Sản phẩm yêu thích</a></li>
