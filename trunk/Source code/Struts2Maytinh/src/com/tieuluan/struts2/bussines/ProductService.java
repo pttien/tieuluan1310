@@ -17,4 +17,5 @@ public interface ProductService {
 	List<Product> getProductList();
 	List<Product> getProductListPaging(KPaging<Product> paging);
 	Product getProductById(Integer id);
+	public List<Product> getProductList(KPaging<Product> paging,Integer id);
 }
