@@ -17,7 +17,7 @@
                                     <div class="extra-wrap">
                                         <h4><s:property value='#ls.name'/></h4>
                                         <p class="p2"><s:property value='#ls.info' escapeHtml="false"/></p>
-                                        <a class="button" href="#">Chi tiết</a>
+                                        <a class="button" href="/detailProduct?id=<s:property value='#ls.id'/>">Chi tiết</a>
                                         <input type='hidden' id='id' value='<s:property value='#ls.id'/>' />
                                     </div>
                                 </div>
