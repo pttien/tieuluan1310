@@ -5,6 +5,7 @@ import java.util.List;
 import javassist.convert.Transformer;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
@@ -42,6 +43,13 @@ public class ProductDaoImpl implements ProductDao {
 		return (List<Product>) sessionFactory.getCurrentSession().createCriteria(Product.class)
 				.setFirstResult(paging.getPage() * paging.getMaxResult())
 				.setMaxResults(paging.getMaxResult()).addOrder(Order.desc("created_at")).list();
+	}
+	@Override
+	public List<Product> getProductList(KPaging<Product> paging, Integer id) {
+		
+		return (List<Product>) sessionFactory.getCurrentSession().createCriteria(Product.class)
+				.setFirstResult(paging.getPage() * paging.getMaxResult())
+				.setMaxResults(paging.getMaxResult()).add(Restrictions.not(Restrictions.eq("id", id))).addOrder(Order.desc("created_at")).list();
 	}
 	@Override
 	public Product getProductById(Integer id){
