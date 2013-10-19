@@ -37,9 +37,13 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getProductListPaging(KPaging<Product> paging) {
 		return productDao.getProductListPaging(paging);
 	}
+	@Override
 	public Product getProductById(Integer id){
 		return productDao.getProductById(id);
 	}
+	@Override
+	public List<Product> getProductList(KPaging<Product> paging,Integer id) {
+		return productDao.getProductList(paging, id);
+	}
 	
-
 }
