@@ -2,7 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
     <div class="main">
                     <div class="wrapper">
-                        <h1><a href="index.html">logo</a></h1>
+                        <h1><a href="/home">logo</a></h1>
                         <div class="fright">
                             <div class="indent">
                                 <span class="address">LỚP SƯ PHẠM CNTT 109100</span>
