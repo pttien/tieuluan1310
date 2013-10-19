@@ -24,7 +24,8 @@ a:hover {text-decoration:none;}
 .col-1, .col-2 {float:left; width:160px;}
 .col-1 {margin-right:50px;}
 
-.wrapper {width:100%; overflow:hidden;}
+.wrapper {width:100%; overflow:hidden;} 
+
 .extra-wrap {overflow:hidden;}
  
 p {margin-bottom:18px;}
@@ -435,3 +436,10 @@ footer {
 		-moz-border-radius:2px;
 		-webkit-border-radius:2px;
 	}
+	.newwrapper {width:100%; overflow:hidden;padding-top: 25px}
+	#newcontent {
+	width:100%; 
+	padding:30px 0;
+	position:relative;
+	z-index:1;
+}
