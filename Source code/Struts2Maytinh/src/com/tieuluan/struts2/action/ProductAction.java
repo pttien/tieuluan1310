@@ -27,14 +27,33 @@ public class ProductAction extends AbstractAction {
     private List<Product> lisproduct;
     private Product product;
     private Integer id;
+    private String name_factory;
+    private String name_catalogy;
+    private String pice_product;
 
    
+	public String getName_catalogy() {
+		return name_catalogy;
+	}
+	public void setName_catalogy(String name_catalogy) {
+		this.name_catalogy = name_catalogy;
+	}
 	public String execute()	{
 		return "success";
 	}
 	public String detailProduct()
 	{
+		product=productService.getProductById(id);
+		String tmp=product.getInfo();
+		tmp=StringUtil.clearAllHTMLTags(tmp);
+		tmp=StringUtil.convertHTMLCodeToString(tmp);
+		product.setInfo(tmp);
+		name_factory=product.getFactory().getName();
+		name_catalogy=product.getCategogy().getName();
+		pice_product=StringUtil.formatMoneyComma(product.getPice().toString());
 		return "success";
+		
+		
 	}
 	public String getJsonProductById()
 	{
@@ -67,9 +86,18 @@ public class ProductAction extends AbstractAction {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
-
+	public String getName_factory() {
+		return name_factory;
+	}
+	public void setName_factory(String name_factory) {
+		this.name_factory = name_factory;
+	}
+	public String getPice_product() {
+		return pice_product;
+	}
+	public void setPice_product(String pice_product) {
+		this.pice_product = pice_product;
+	}	
 	
 	
 }
