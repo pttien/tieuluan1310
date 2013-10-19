@@ -40,20 +40,24 @@
                              <article class="grid_8new">
                                  <div class="indent-left">
 <div class="wrapper margin-bot">
-                                         <figure class="img-indent3"><img src="/resource/images/page4-img1.png" alt=""></figure>
+                                         <figure class="img-indent3"><img src="/resource/images/<s:property value='product.image'/>" alt=""></figure>
+                                         <!-- <a id="idimage" href="/resource/images/<s:property value='product.image'/>"> <img src="/resource/images/<s:property value='product.image'/>" alt=""></a>-->
                                          <div class="extra-wrap">
-		 <form id="contact-form" method="post" enctype="multipart/form-data">                    
+		 							<form id="contact-form" method="post" enctype="multipart/form-data">                    
                                          <fieldset>
-                                               <label><span class="text-form">Name:</span>Tên máy tính A</label>
-                                    <label><span class="text-form">Danh mục:</span> DELL</label>                              
-                                    <label><span class="text-form">Cấu hình CPU:</span> 1.7Ghz</label>                              
+                                         		
+                                               	<label><span class="text-form">Tên sản phẩm : </span><s:property value="product.name"/></label>
+			                                    <label><span class="text-form">Giá Bán : </span><s:property value="pice_product"/> &nbsp;&nbsp;VND</label>                              
+			                                    <label><span class="text-form">Nhà sản xuất:</span><s:property value="name_factory"/></label>           
+			                                    <label><span class="text-form">Thời gian bảo hành:</span><s:property value="product.warranty"/>&nbsp;&nbsp;tháng</label>   
+			                                    <label><span class="text-form">Tên danh mục:</span><s:property value="name_catalogy"/></label>   
+			                                    <label><span class="text-form">Thông tin sản phẩm:</span></label><span><s:property value="product.info"/></span>                    
                                     <div class="wrapper">
                     
-                                      <div class="extra-wrap">
-                                    <label><span class="text-form">Mô tả:</span> 1.7Ghz</label>   
+                                      <div class="extra-wrap">                                     
                                           <div class="clear"></div>
                                           <div class="buttons">
-                                              <a class="button" href="#">Mua</a>
+                                              <a class="button" href="#">Đặt mua</a>
                                               <a class="button" href="#">Thêm vào sản phẩm yêu thích</a>
                                           </div> 
                                       </div>
